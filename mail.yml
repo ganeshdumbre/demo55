@@ -1,0 +1,11 @@
+---
+  - name: Test Playbook
+    hosts: all
+    become: yes
+
+    tasks:
+      - name: Install Apache2 Package
+        apt:
+          name: apache2
+          state: absent
+        when: ansible_distribution == "Ubuntu"
